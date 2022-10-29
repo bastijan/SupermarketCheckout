@@ -46,5 +46,10 @@ The firts thinks are that a simple foreach loop with switch statement can solve 
 
 I choose this approach.
 
+**Folder Structure**
+
+**Basic** - basic solution, business logic separated of main program file
+SeedProduct.cs - seed dummy data
+ShoppingCart.cs - business logic, Scan() and GetTotal() methods
 
 
