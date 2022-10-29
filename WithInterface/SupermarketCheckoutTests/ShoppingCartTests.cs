@@ -31,7 +31,7 @@ namespace SupermarketCheckout.Logic.Tests
         [InlineData(new string[] { "1", "2", "1", "1", "3" }, 185)]
         [InlineData(new string[] { "1", "2", "1", "2", "2", "2", "3", "3" }, 345)]
 
-        public void GetTotalTest(Array products, decimal expectedResult)
+        public void GetTotalTest(string[] products, decimal expectedResult)
         {
             var cart = new ShoppingCart();
             foreach (string product in products)
