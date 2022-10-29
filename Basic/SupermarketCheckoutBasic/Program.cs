@@ -1,10 +1,10 @@
-﻿using System;
-using SupermarketCheckout.Logic;
+﻿using SupermarketCheckout.Logic;
+using System;
 
 namespace SupermarketCheckout
 {
     internal static class Program
-    {        
+    {
         /// <summary>
         /// Show menu
         /// </summary>
@@ -23,6 +23,7 @@ namespace SupermarketCheckout
         /// <returns>Boolean</returns>
         private static Boolean MainMenu()
         {
+            var _sc = new ShoppingCart();
             Console.Clear();
             Console.WriteLine("Scan a product:");
             Console.WriteLine("1) Apple");
@@ -38,12 +39,12 @@ namespace SupermarketCheckout
             switch (userInput)
             {
                 case "C":
-                    ShoppingCart.ShowTotal();
+                    _sc.ShowTotal();
                     break;
                 case "X":
                     return false;
                 default:
-                    ShoppingCart.Scan(userInput);
+                    _sc.Scan(userInput);
                     break;
             }
 

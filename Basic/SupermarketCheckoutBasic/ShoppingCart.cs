@@ -1,14 +1,14 @@
-﻿using System;
+﻿using SupermarketCheckout.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using SupermarketCheckout.Model;
 
 namespace SupermarketCheckout.Logic
 {
     /// <summary>
     /// Scan and calculate total price
     /// </summary>
-    public static class ShoppingCart
+    public class ShoppingCart
     {
 
         // userCart is a list of products in the user's cart
@@ -21,13 +21,13 @@ namespace SupermarketCheckout.Logic
         // productsList is a list of products
         private static readonly List<Product> productsList = SeedProducts.GetProducts();
 
-  
+
         /*
          * Get product by id
          * @param id
          * If product is not found return null         
          */
-        private static Product GetProductById(int id)
+        private Product GetProductById(int id)
         {
             product = productsList.FirstOrDefault(p => p.Id == id);
             return product;
@@ -38,7 +38,7 @@ namespace SupermarketCheckout.Logic
         /// </summary>
         /// <param name="userInput">The user input.</param>
         /// <returns>string</returns>
-        public static string Scan(string userInput)
+        public string Scan(string userInput)
         {
             string ret;
             bool success = false;
@@ -92,7 +92,7 @@ namespace SupermarketCheckout.Logic
         /// in one line instead loop and switch (I hate loops because of time complexity and avoid it if it is possible)
         /// </summary>
         /// <returns>decimal</returns>
-        public static decimal GetTotal()
+        public decimal GetTotal()
         {
             decimal total = 0;
             // group products by product Id and sum the quantity
@@ -131,7 +131,7 @@ namespace SupermarketCheckout.Logic
         /// <summary>
         /// Shows the total.
         /// </summary>
-        public static void ShowTotal()
+        public void ShowTotal()
         {
             var total = GetTotal();
             Console.WriteLine("Your shopping cart total: {0}", total);

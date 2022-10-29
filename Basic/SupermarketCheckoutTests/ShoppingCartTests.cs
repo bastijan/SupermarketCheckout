@@ -1,24 +1,32 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SupermarketCheckout.Logic;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿using Xunit;
 namespace SupermarketCheckout.Logic.Tests
 {
-    [TestClass()]
     public class ShoppingCartTests
     {
-        [TestMethod()]
-        public void ScanTest()
+        [Theory]
+        [InlineData("1", "Apple")]
+        [InlineData("2", "Banana")]
+        [InlineData("M", null)]
+        public void ScanTest(string first, string expectedResult)
         {
-            Assert.Fail();
+            ShoppingCart cart = new ShoppingCart();
+            string res = cart.Scan(first);
+
+            Assert.NotEmpty(res);
+            Assert.Matches(expectedResult, res);
         }
 
-        [TestMethod()]
+        [Fact()]
         public void GetTotalTest()
         {
-            Assert.Fail();
+            Assert.True(false, "This test needs an implementation");
         }
+
+        [Fact()]
+        public void ShowTotalTest()
+        {
+            Assert.True(false, "This test needs an implementation");
+        }
+
     }
 }
