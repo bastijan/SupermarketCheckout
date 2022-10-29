@@ -42,6 +42,7 @@ namespace SupermarketCheckout.Logic
         {
             string ret;
             bool success = false;
+            decimal subTotal = 0;
             if (int.TryParse(userInput, out int userInputInt))
             {
                 product = GetProductById(userInputInt);
@@ -50,8 +51,11 @@ namespace SupermarketCheckout.Logic
                 {
                     userCart.Add(product);
                     userCartProducts.Add(product.Name);
+                    // calculate sub total
+                    subTotal = GetTotal();
                     success = true;
                     Console.WriteLine("Product {0} added to cart!", product.Name);
+                    Console.WriteLine("Sub total: {0}", subTotal);
                 }
             }
 
@@ -73,22 +77,21 @@ namespace SupermarketCheckout.Logic
 
         }
 
-        /*
-         * Get total
-         * Calculate total
-         *
-         * This method uses a LINQ query to group products by name and sum the quantity
-         * Then it calculates the total based on the quantity and the product price
-         * If the product has a discount, it calculates the total based on the discount
-         * Math.DivRem is used to calculate the discount quantity (DiscountPackages) and the remainder (products left):
-         *   The DiscountPackages is multiplied by the DiscountQtyPrice and and adds up the remainder multiplied by the Price
-         *   DiscountPackages * DiscountQtyPrice + products left * Price
-         *      
-         * 
-         * NOTE: The firts thinks are usualy to use a for loop and a switch statement to decide is a product has a discount or not,
-         * but I think taht is better to use bilt-in power of LINQ and Math library to solve this problem
-         * in one line instead loop and switch (I hate loops beause of time complexity and avoid it if it is possible)
-         */
+        /// <summary>
+        /// Gets the total.
+        /// This method uses a LINQ query to group products by name and sum the quantity
+        ///  Then it calculates the total based on the quantity and the product price
+        /// If the product has a discount, it calculates the total based on the discount
+        /// Math.DivRem is used to calculate the discount quantity(DiscountPackages) and the remainder(products left) :
+        ///   The DiscountPackages is multiplied by the DiscountQtyPrice and adds up the remainder multiplied by the Price
+        /// DiscountPackages * DiscountQtyPrice + products left * Price
+        ///
+        ///
+        /// NOTE: The first thinks are usually to use a for loop and a switch statement to decide is a product has a discount or not,
+        /// but I think that is better to use built-in power of LINQ and Math library to solve this problem
+        /// in one line instead loop and switch (I hate loops because of time complexity and avoid it if it is possible)
+        /// </summary>
+        /// <returns>decimal</returns>
         public static decimal GetTotal()
         {
             decimal total = 0;
@@ -121,9 +124,19 @@ namespace SupermarketCheckout.Logic
                 }
 
             }
+
+            return total;
+        }
+
+        /// <summary>
+        /// Shows the total.
+        /// </summary>
+        public static void ShowTotal()
+        {
+            var total = GetTotal();
             Console.WriteLine("Your shopping cart total: {0}", total);
             Console.ReadKey();
-            return total;
+
         }
     }
 }

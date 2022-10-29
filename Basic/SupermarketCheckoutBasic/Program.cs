@@ -4,25 +4,24 @@ using SupermarketCheckout.Logic;
 namespace SupermarketCheckout
 {
     internal static class Program
-    {
-        /*
-         * Main method
-         * Retrieve products from SeedProducts and show menu
-         */
+    {        
+        /// <summary>
+        /// Show menu
+        /// </summary>
         private static void Main()
         {
-            bool showMenu = true;
+            var showMenu = true;
             while (showMenu)
             {
                 showMenu = MainMenu();
             }
         }
 
-        /*
-         * Main menu
-         * Show menu and get user input
-         */
-        private static bool MainMenu()
+        /// <summary>
+        /// Write menu and get user input
+        /// </summary>
+        /// <returns>Boolean</returns>
+        private static Boolean MainMenu()
         {
             Console.Clear();
             Console.WriteLine("Scan a product:");
@@ -39,7 +38,7 @@ namespace SupermarketCheckout
             switch (userInput)
             {
                 case "C":
-                    ShoppingCart.GetTotal();
+                    ShoppingCart.ShowTotal();
                     break;
                 case "X":
                     return false;

@@ -46,10 +46,16 @@ The firts thinks are that a simple foreach loop with switch statement can solve 
 
 I choose this approach.
 
+**update:** I added sub-total after each item scan(), just for display purpose
+
+
 **Folder Structure**
 
 **Basic** - basic solution, business logic separated of main program file
 SeedProduct.cs - seed dummy data
-ShoppingCart.cs - business logic, Scan() and GetTotal() methods
+ShoppingCart.cs - business logic, Scan(), ShowTotal(), and GetTotal() methods
+**Basic/Model** - models
+Product.cs - Product model
+Cart.cs - Shopping cart model
 
 
