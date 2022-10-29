@@ -48,14 +48,21 @@ I choose this approach.
 
 **update:** I added sub-total after each item scan(), just for display purpose
 
-
+## Basic version
 **Folder Structure**
 
 **Basic** - basic solution, business logic separated of main program file
 SeedProduct.cs - seed dummy data
-ShoppingCart.cs - business logic, Scan(), ShowTotal(), and GetTotal() methods
+ShoppingCart.cs - business logic, Scan(), ShowScan(), ShowTotal(), GetTotal(), ResetShoppingCart() methods
 **Basic/Model** - models
 Product.cs - Product model
 Cart.cs - Shopping cart model
+
+### Unit Tests
+Unit tests are based on xUnit and use Facts and Theory.
+
+## With Interface version
+This verison is based on Basic but with interfaces that make separated runtime part of console application and business logic
+
 
 

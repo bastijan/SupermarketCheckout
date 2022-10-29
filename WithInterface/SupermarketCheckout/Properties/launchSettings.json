@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SupermarketCheckout": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
