@@ -33,14 +33,32 @@ namespace SupermarketCheckout.Logic
             return product;
         }
 
+        public void ShowScan(string userInput)
+        {
+            (string productName, decimal subTotal) scanResult = Scan(userInput);
+
+            if (scanResult.productName == null)
+            {
+                Console.WriteLine("Invalid input");
+            }
+            else
+            {
+                Console.WriteLine("Product {0} added to cart!", scanResult.productName);
+                Console.WriteLine("Sub total: {0}", scanResult.subTotal);
+                Console.WriteLine("Your shopping cart: {0}", String.Join(", ", userCartProducts.ToArray()));
+            }
+            Console.Write("\r\nPress Enter to return to Main Menu");
+            Console.ReadLine();
+        }
+
         /// <summary>
         /// Scans the specified user input.
         /// </summary>
         /// <param name="userInput">The user input.</param>
-        /// <returns>string</returns>
-        public string Scan(string userInput)
+        /// <returns>(string, decimal)</returns>
+        public (string, decimal) Scan(string userInput)
         {
-            string ret;
+            string retString;
             bool success = false;
             decimal subTotal = 0;
             if (int.TryParse(userInput, out int userInputInt))
@@ -51,29 +69,22 @@ namespace SupermarketCheckout.Logic
                 {
                     userCart.Add(product);
                     userCartProducts.Add(product.Name);
-                    // calculate sub total
-                    subTotal = GetTotal();
                     success = true;
-                    Console.WriteLine("Product {0} added to cart!", product.Name);
-                    Console.WriteLine("Sub total: {0}", subTotal);
                 }
             }
 
 
             if (success)
             {
-                Console.WriteLine("Your shopping cart: {0}", String.Join(", ", userCartProducts.ToArray()));
-                ret = product.Name;
+                retString = product.Name;
             }
             else
             {
-                Console.WriteLine("Invalid input");
-                ret = null;
+                retString = null;
             }
+            subTotal = GetTotal();
 
-            Console.Write("\r\nPress Enter to return to Main Menu");
-            Console.ReadLine();
-            return ret;
+            return (retString, subTotal);
 
         }
 
@@ -136,7 +147,14 @@ namespace SupermarketCheckout.Logic
             var total = GetTotal();
             Console.WriteLine("Your shopping cart total: {0}", total);
             Console.ReadKey();
+        }
 
+        /// <summary>
+        /// Resets the shopping cart.
+        /// </summary>
+        public void ResetShoppingCart()
+        {
+            userCart.Clear();
         }
     }
 }

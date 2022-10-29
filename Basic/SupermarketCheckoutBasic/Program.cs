@@ -44,7 +44,7 @@ namespace SupermarketCheckout
                 case "X":
                     return false;
                 default:
-                    _sc.Scan(userInput);
+                    _sc.ShowScan(userInput);
                     break;
             }
 

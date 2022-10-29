@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 namespace SupermarketCheckout.Logic.Tests
 {
     public class ShoppingCartTests
@@ -6,27 +7,43 @@ namespace SupermarketCheckout.Logic.Tests
         [Theory]
         [InlineData("1", "Apple")]
         [InlineData("2", "Banana")]
-        [InlineData("M", null)]
+        [InlineData("3", "Peach")]
         public void ScanTest(string first, string expectedResult)
         {
             ShoppingCart cart = new ShoppingCart();
-            string res = cart.Scan(first);
+            (string productName, decimal subTotal) res = cart.Scan(first);
 
-            Assert.NotEmpty(res);
-            Assert.Matches(expectedResult, res);
+            Assert.NotEmpty(res.productName);
+            Assert.Matches(expectedResult, res.productName);
         }
 
         [Fact()]
-        public void GetTotalTest()
+        public void ScanTest_InvalidInput()
         {
-            Assert.True(false, "This test needs an implementation");
+            ShoppingCart cart = new ShoppingCart();
+            (string productName, decimal subTotal) res = cart.Scan("M");
+
+            Assert.Null(res.productName);
         }
 
-        [Fact()]
-        public void ShowTotalTest()
-        {
-            Assert.True(false, "This test needs an implementation");
-        }
+        [Theory]
+        [InlineData(new string[] { "1", "2", "3" }, 140)]
+        [InlineData(new string[] { "1", "2", "1", "3" }, 155)]
+        [InlineData(new string[] { "1", "2", "1", "1", "3" }, 185)]
+        [InlineData(new string[] { "1", "2", "1", "2", "2", "2", "3", "3" }, 345)]
 
+        public void GetTotalTest(Array products, decimal expectedResult)
+        {
+            var cart = new ShoppingCart();
+            foreach (var product in products)
+            {
+                cart.Scan(product.ToString());
+            }
+
+            var total = cart.GetTotal();
+            cart.ResetShoppingCart();
+            Assert.True(total > 0);
+            Assert.Equal(expectedResult, total);
+        }
     }
 }
