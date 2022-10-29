@@ -64,5 +64,35 @@ Unit tests are based on xUnit and use Facts and Theory.
 ## With Interface version
 This verison is based on Basic but with interfaces that make separated runtime part of console application and business logic
 
+## Features
+Porgram shows folowing menu:
+```
+Scan a product:
+1) Apple
+2) Banana
+3) Peach
+C) Go to checkout
+X) Break and exit
 
+Select an option: 
+```
 
+Choosing 1, 2, or 3, program "scans" products and shows the subtotal, selected product, and content of the shopping cart, for example:
+
+```
+Product Apple added to the cart!
+Subtotal: 95
+Your shopping cart: Apple, Banana, Apple
+
+Press Enter to return to Main Menu
+```
+If you choose "c" (lower or uppercase) program shows subtotal.
+
+```
+Select an option: c
+Your shopping cart total: 95
+```
+
+After showing subtotal you can continue with adding product into cart and check total again by selection "c" option from the menu.
+
+Option "x" break execution of the program.

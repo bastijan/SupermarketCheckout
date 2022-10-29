@@ -43,8 +43,8 @@ namespace SupermarketCheckout.Logic
             }
             else
             {
-                Console.WriteLine("Product {0} added to cart!", scanResult.productName);
-                Console.WriteLine("Sub total: {0}", scanResult.subTotal);
+                Console.WriteLine("Product {0} added to the cart!", scanResult.productName);
+                Console.WriteLine("subtotal: {0}", scanResult.subTotal);
                 Console.WriteLine("Your shopping cart: {0}", String.Join(", ", userCartProducts.ToArray()));
             }
             Console.Write("\r\nPress Enter to return to Main Menu");
