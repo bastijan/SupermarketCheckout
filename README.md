@@ -2,7 +2,7 @@
 
 **Note**
 
-I received the following comment on this code kata solution "checkout cart" (actually task is this problem http://codekata.com/kata/kata09-back-to-the-checkout/):
+I received the following comment on this code kata solution "checkout cart" (actually task is this problem http://codekata.com/kata/kata09-back-to-the-checkout/) - branch "v1":
 
 ```
 There were few things we didn’t like in your approach.
@@ -20,6 +20,9 @@ Would this code better respect the Single responsibility principle if instead of
 
 Is any validation required other than int.TryParse() other than to satisfy the form and purity of the code and not the substance?
 
+```
+The clean version without "mixing" is in the "Simple" folder. You can see how stupid it is to talk about mixed logic and the presentation layer - the "presentation" code (Console.WriteLine()) I added just to make the output more readable and more like a real shopping POS, just for fun. I expected the human being on the other side to understand it. I was wrong. Always expect someone who thinks mechanically to analyze your code.
+```
 Unfortunately, the most of today's programmers have a "programmed mind" and are unable to think beyond learned definitions, patterns, and blueprints, nothing more thoughtful than a trained dog.
 
 The programmers who interpreted my code, which is not structurally perfect, because it was not an idea in the task for which it was planned to be solved in 1-2 hours with all unit tests and manual, but a demonstration of a creative and thoughtful way of thinking about the core of the problem, not about make-up.
