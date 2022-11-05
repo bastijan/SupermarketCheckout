@@ -27,7 +27,10 @@ The programmers who interpreted my code, which is not structurally perfect, beca
 I was wrong. I need to learn that good programming today is copy-paste of sterile forms and dogmatic respect for acronyms and principles without their essential understanding.
 
 ```
-When I had my first programming exam at the university, I asked professor Litovski to check my work, so that I would know if I should study for the oral exam. He quickly looked at my solution and said "you failed". I asked him to take another look, because I'm sure I didn't.
+When I had my first programming exam at the university, I asked professor Litovski to check my work, 
+so that I would know if I should study for the oral exam. 
+He quickly looked at my solution and said "you failed". 
+I asked him to take another look, because I'm sure I didn't.
 Two days later, I got a score of 10, the highest possible.
 I didn't solve the task the way he taught us. I found another, better way.
 That is me. Whoever likes the way I think, ok, whoever not likes, ok too.
