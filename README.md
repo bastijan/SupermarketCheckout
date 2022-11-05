@@ -20,11 +20,18 @@ Would this code better respect the Single responsibility principle if instead of
 
 Is any validation required other than int.TryParse() other than to satisfy the form and purity of the code and not the substance?
 
-Unfortunately, today's programmers have a "programmed mind" and are unable to think beyond learned definitions, patterns, and blueprints.
+Unfortunately, the most of today's programmers have a "programmed mind" and are unable to think beyond learned definitions, patterns, and blueprints, nothing more thoughtful than a trained dog.
 
 The programmers who interpreted my code, which is not structurally perfect, because it was not an idea in the task for which it was planned to be solved in 1-2 hours with all unit tests and manual, but a demonstration of a creative and thoughtful way of thinking about the core of the problem, not about make-up.
 
 I was wrong. I need to learn that good programming today is copy-paste of sterile forms and dogmatic respect for acronyms and principles without their essential understanding.
+
+```
+When I had my first programming exam at the university, I asked professor Litovski to check my work, so that I would know if I should study for the oral exam. He quickly looked at my solution and said "you failed". I asked him to take another look, because I'm sure I didn't.
+Two days later, I got a score of 10, the highest possible.
+I didn't solve the task the way he taught us. I found another, better way.
+That is me. Whoever likes the way I think, ok, whoever not likes, ok too.
+```
 
 **Task**
 
