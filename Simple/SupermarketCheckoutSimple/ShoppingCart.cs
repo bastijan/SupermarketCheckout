@@ -10,7 +10,6 @@ namespace SupermarketCheckout.Logic
     /// </summary>
     public class ShoppingCart
     {
-
         // userCart is a list of products in the user's cart
         private static List<Product> userCart = new List<Product>();
 
@@ -18,9 +17,9 @@ namespace SupermarketCheckout.Logic
         private static List<string> userCartProducts = new List<string>();
 
         private static Product product;
+
         // productsList is a list of products
         private static readonly List<Product> productsList = SeedProducts.GetProducts();
-
 
         /// <summary>
         /// Get product by Id
@@ -53,7 +52,6 @@ namespace SupermarketCheckout.Logic
                 }
             }
 
-
             if (success)
             {
                 return GetTotal();
@@ -62,10 +60,6 @@ namespace SupermarketCheckout.Logic
             {
                 return 0;
             }
-
-
-
-
         }
 
         /// <summary>
@@ -99,7 +93,7 @@ namespace SupermarketCheckout.Logic
                 })
                 .ToList();
 
-            // calculate total in reduced foreach, 
+            // calculate total in reduced foreach loop,
             // not using a number of loops equal to number of items in cart, but just number of different products in cart
             foreach (var item in sortedCart)
             {
@@ -115,13 +109,11 @@ namespace SupermarketCheckout.Logic
                     {
                         total = item.Count * item.Price;
                     }
-
                 }
                 else
                 {
                     total += item.Count * item.Price;
                 }
-
             }
 
             return total;
