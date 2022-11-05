@@ -14,10 +14,11 @@ Eg.:
 
 I think that the focus on the shell or the structure of the program instead of the solution algorithm is a wrong focus.
 
-Also, not even in any MSDN example of a console application will you see a consistent application of the Single responsibility principle, and the logic and "presentation layer", i.e. simple output as a result of executing the business logic of the code, are in the same class.
+Also, not even in any MSDN example of a console applied will you see a consistent application of the Single responsibility principle, and the logic and "presentation layer", i.e. simple output as a result of executing the business logic of the code, are in the same class.
 
-Would this code better respect the Single responsibility principle if instead of a human-readable message it returned a small number as a result, and then the principle would not be violated?
-Is any validation required other than int.TryParse() other than to satisfy the form and prudence of the code and not the substance?
+Would this code better respect the Single responsibility principle if instead of a human-readable messages it returned a just number as a result, and then the principle would not be violated?
+
+Is any validation required other than int.TryParse() other than to satisfy the form and purity of the code and not the substance?
 
 Unfortunately, today's programmers have a "programmed mind" and are unable to think beyond learned definitions, patterns, and blueprints.
 
