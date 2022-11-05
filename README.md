@@ -1,5 +1,30 @@
 # Supermarket Checkout
 
+**Note**
+
+I received the following comment on this code kata solution "checkout cart" (actually task is this problem http://codekata.com/kata/kata09-back-to-the-checkout/):
+
+```
+There were few things we didn’t like in your approach.
+
+Eg.:
+•	Mixing the logic and the presentation layer in one class which is abusing the single responsible principle
+•	Or pushing the user input directly to the services without any validation
+```
+
+I think that the focus on the shell or the structure of the program instead of the solution algorithm is a wrong focus.
+
+Also, not even in any MSDN example of a console application will you see a consistent application of the Single responsibility principle, and the logic and "presentation layer", i.e. simple output as a result of executing the business logic of the code, are in the same class.
+
+Would this code better respect the Single responsibility principle if instead of a human-readable message it returned a small number as a result, and then the principle would not be violated?
+Is any validation required other than int.TryParse() other than to satisfy the form and prudence of the code and not the substance?
+
+Unfortunately, today's programmers have a "programmed mind" and are unable to think beyond learned definitions, patterns, and blueprints.
+
+The programmers who interpreted my code, which is not structurally perfect, because it was not an idea in the task for which it was planned to be solved in 1-2 hours with all unit tests and manual, but a demonstration of a creative and thoughtful way of thinking about the core of the problem, not about make-up.
+
+I was wrong. I need to learn that good programming today is copy-paste of sterile forms and dogmatic respect for acronyms and principles without their essential understanding.
+
 **Task**
 
 Implement the code for a supermarket checkout that calculates the total price of a number of items. Goods are priced individually, however there are weekly special offers for when multiple items are bought. For example "Apples are 30 each or 2 for 45".
