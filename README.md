@@ -90,6 +90,10 @@ I choose this approach.
 ## Basic version
 **Folder Structure**
 
+**Simple** - simple solution
+Based on Basic, but simplified. Wasting time for purity :)
+Of course that is not 100% ideal. I know but I do not care about it.
+
 **Basic** - basic solution, business logic separated of main program file
 SeedProduct.cs - seed dummy data
 ShoppingCart.cs - business logic, Scan(), ShowScan(), ShowTotal(), GetTotal(), ResetShoppingCart() methods
